@@ -60,6 +60,59 @@ public class Practica {
 	    return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 	}
 
+	//Ejercicio 9
+	static boolean numPrimo(int n){
+		int cont =0;
+		boolean primo=true;
+	    for(int i=2;i<n;i++){
+	        if(n%i==0){
+	            cont++;
+	        }
+	    }
+	    if(cont>0){
+	        primo =false;
+	    }else{
+	        primo =true;
+	    }
+	    return primo;
+		
+	}
+	
+	//Ejercicio 10 usando exponencial y logaritmo
+	static void suma(double a, double b) {
+		double sum = Math.log(Math.exp(a)*Math.exp(b));
+		System.out.println(sum);
+	}
+	
+	//Ejercicio 11
+	static void numPalindrome(int n) {
+		String numStr = Integer.toString(n);
+		String rev = new StringBuilder(numStr).reverse().toString();
+		int numRev = Integer.parseInt(rev);
+		
+		if(n == numRev) {
+			System.out.println("Es palindromo");
+		}else {
+			System.out.println("No es palindromo");
+		}
+	}
+	
+	//Ejercicio 12
+	
+	//Ejercicio 13
+	static void removeSpaces(String str) {
+		String newStr = str.replace(" ", "");
+		System.out.println(newStr);
+	}
+	
+	//Ejercicio 14
+	static void stringReverse(String str) {
+		String strReverso = new StringBuilder(str).reverse().toString();
+		System.out.println(strReverso);
+	}
+	
+	//Ejercicio 15
+
 	
 	public static void main(String[] args) {
 		
@@ -76,6 +129,27 @@ public class Practica {
 		volCono(3.0,10.0);
 		System.out.println("\n");
 		System.out.println(bisiesto(2024));
+		System.out.println("\n");
+
+		//primeros 100 primos
+		for(int i=2;i<=30;i++){
+			if(numPrimo(i)){
+			     System.out.println(i);
+			}
+		}
+		System.out.println("\n");
+		
+		suma(3,5);
+		System.out.println("\n");
+		
+		numPalindrome(123);
+		numPalindrome(313);
+		System.out.println("\n");
+		
+		removeSpaces("Hola Mundo");
+		System.out.println("\n");
+		
+		stringReverse("Hola");
 		
 	}
 
